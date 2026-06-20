@@ -1,35 +1,35 @@
-# NOVIDADES JS ES6, ES7, ES8
+## NOVIDADES JS ES6, ES7, ES8
 
-## DECLARAÇÃO DE VARIÁVEIS LET (block-scoped)
+### DECLARAÇÃO DE VARIÁVEIS LET (block-scoped)
 ```javascript
 let a = 1;
 let b = 2;
 let c = 0;
 ```
-## DECLARAÇÃO DE VARIÁVEIS CONST (constants)
+### DECLARAÇÃO DE VARIÁVEIS CONST (constants)
 const PI = 3.1411593;
 
-## ANONIMOUS FUNCTIONS (block scoped functions)
+### ANONIMOUS FUNCTIONS (block scoped functions)
 ```javascript
 {
 	0;
 } //(function(){ return 0; })();
 ```
 
-## ARROW FUNCTIONS
+### ARROW FUNCTIONS
 ```javascript
 () => {} // function () {}
 (res) => res // function (res) { return res; }
 ```
 
-## PARÂMETROS DEFAULT (default parameters)
+### PARÂMETROS DEFAULT (default parameters)
 ```javascript
 function f (x, y = 7, z = 42) {
     return x + y + z
 } // f(1) === 50
 ```
 
-## Manipulação de parâmetros extras (Rest operator)
+### Manipulação de parâmetros extras (Rest operator)
 ```javascript
 function f (x, y, ...a) {
     return (x + y) * a.length
@@ -37,13 +37,13 @@ function f (x, y, ...a) {
 f(1, 2, "hello", true, 7) === 9 // ["hello", true, 7].length = 3
 ```
 
-## Junção de arrays (Spread Operator)
+### Junção de arrays (Spread Operator)
 ```javascript
 var params = [ "hello", true, 7 ]
 var other = [ 1, 2, ...params ] // [ 1, 2, "hello", true, 7 ]
 ```
 
-## Interpolação de String (String Interpolation)
+### Interpolação de String (String Interpolation)
 ```javascript
 var name = "Glauber";
 var sobrenome = "Santos";
@@ -51,12 +51,12 @@ var valores = ["35 anos", "Mora em Brasília"];
 var mensagem = `${name} ${sobrenome}, ${valores.join(", ")}`; // 'Glauber Santos, 35 anos, Mora em Brasília'
 ```
 
-## MAP (Cria um novo array baseado em outro array)
+### MAP (Cria um novo array baseado em outro array)
 ```javascript
 [1, 2, 3].map(function(item, index){ return index+ ": " +item }) //['0: 1', '1: 2', '2: 3']
 ```
 
-## CONCATENANDO VARIÁVEIS DENTRO DE OBJETOS (Object Property Assignment)
+### CONCATENANDO VARIÁVEIS DENTRO DE OBJETOS (Object Property Assignment)
 ```javascript
 var chave = "chaveObj";
 var valor = "valorObj";
@@ -70,7 +70,7 @@ console.log({
 }); // { foo: ƒunction(a, b){}, bar: ƒunction(x, y){} }
 ```
 
-## DESESTRUTURAÇÃO DE VARIÁVEIS (Destructuring Assignment)
+### DESESTRUTURAÇÃO DE VARIÁVEIS (Destructuring Assignment)
 ```javascript
 var list = [ 1, 2, 3 ];
 var newList = [ a, , b ];
@@ -88,7 +88,7 @@ var { foo, boo } = obj;
 console.log(foo, boo); // value1 value2
 ```
 
-## MÓDULOS (Export/Import)
+### MÓDULOS (Export/Import)
 
 ```javascript
 export function sum (x, y) { return x + y }
@@ -101,14 +101,14 @@ import { sum, pi } from "math";
 console.log(sum(1,2), pi);
 ```
 
-## SUBSTRING (String Searching)
+### SUBSTRING (String Searching)
 ```javascript
 "hello boy".startsWith("hello"); // true
 "hello boy".endsWith("boy"); // true
 "hello boy".includes("ell"); // true
 ```
 
-## CLASSES
+### CLASSES
 ```javascript
 class Pessoa {
 	name = "";
@@ -131,7 +131,7 @@ class Pessoa {
 const pessoa = new Pessoa("Glauber", "Gonçalves");
 ```
 
-## EXTENDS GET E SET
+### EXTENDS GET E SET
 ```javascript
 class Profissao extends Pessoa {
 	#nomeProfissao = "";
@@ -151,14 +151,14 @@ class Profissao extends Pessoa {
 }
 ```
 
-## DATE STRING
+### DATE STRING
 ```javascript
 new Date().toLocaleString(); // 99/99/9999 99:99:99
 new Date().toLocaleDateString(); // 99/99/9999
 new Date().toLocaleTimeString(); // 99:99:99
 ```
 
-## INTL OBJECT (Internacionalization & Location)
+### INTL OBJECT (Internacionalization & Location)
 ```javascript
 var nf1 = new Intl.NumberFormat("en-US")
 var nf2 = new Intl.NumberFormat("pt-BR")
@@ -171,9 +171,9 @@ console.log(nfUSD.format(100200300.40)); //$100,200,300.40
 console.log(nfBRL.format(100200300.40)); //R$ 100.200.300,40
 ```
 
-### hex — base 16 — starts with 0x
-### Oct — base 8 — starts with 0o
-### Binary — base 2 — starts with 0b
+#### hex — base 16 — starts with 0x
+#### Oct — base 8 — starts with 0o
+#### Binary — base 2 — starts with 0b
 ```javascript
 var decimalLit = 15;
 var hexadecimalLit = 0xF;
@@ -184,7 +184,7 @@ console.log(octalLit);
 console.log(binaryLit);
 ```
 
-## OBJECT MAP
+### OBJECT MAP
 ```javascript
 let m = new Map();
 m.set('key1', 'value1');
@@ -202,7 +202,7 @@ m.clear(); ; //Vai esvaziar o mapa
 console.log(m); // Map(0) {size: 0}
 ```
 
-## PROMISSES (Combination)
+### PROMISSES (Combination)
 ```javascript
 Promise.all([
     Promise.resolve(1),
@@ -222,7 +222,7 @@ Promise.allSettled(myPromiseArray).then( (results) => { console.log(results) });
 //(3) [{status: 'fulfilled', value: 100}, {status: 'rejected', reason: null}, {status: 'rejected', reason: Error: Ho No at <anonymous>:4:17}]
 ```
 
-## AYNC/AWAIT
+### AYNC/AWAIT
 ```javascript
 var Api = {
 	get: function (url) {
@@ -255,7 +255,7 @@ async function request(url) {// Consumindo uma api simulada com promise com fun�
 }
 ```
 
-## GLOBAL THIS OBJECT - Se refere ao objeto this não importa onde esteja
+### GLOBAL THIS OBJECT - Se refere ao objeto this não importa onde esteja
 ```javascript
 console.log(globalThis); //window
 var obj = {
@@ -266,7 +266,7 @@ var obj = {
 obj.fnc();
 ```
 
-## VERIFICAÇÃO DE OBJETOS COM ATRIBUIÇÃO
+### VERIFICAÇÃO DE OBJETOS COM ATRIBUIÇÃO
 ```javascript
 let a = 1;
 let b = 2;
@@ -277,7 +277,7 @@ c ||= b; // if(!c) c = b;
 c ??= a; // if(!c) c = a; // PARA FALSEAVEIS -> 0 == false; "" == false; [] == false
 ```
 
-## OPERADORES DE OBJETOS
+### OPERADORES DE OBJETOS
 ```javascript
 const user = {
 	nickname: "Glauber",
@@ -289,26 +289,26 @@ const user = {
 }
 ```
 
-## OPERADOR CONDICIONAL DE POSIÇÃO DE OBJETO QUE NÃO EXISTE
+### OPERADOR CONDICIONAL DE POSIÇÃO DE OBJETO QUE NÃO EXISTE
 ```javascript
 console.log(user.address?.street); 
 console.log(user.address.street || "O valor não existe");
 console.log(user.address.street ?? "O valor não existe") //FALSEAVEIS -> 0 == false; "" == false; [] == false
 ```
 
-## REPLACE ALL
+### REPLACE ALL
 ```javascript
 const text = "Olá mundo esse é meu mundo";
 console.log(text.replace(/mundo/g, 'batata')); //FORMA ANTIGA
 console.log(text.replaceAll('mundo', 'batata'));//NOVO REPLACE ALL
 ```
 
-## NUMERIC SEPARATOR
+### NUMERIC SEPARATOR
 ```javascript
 var num = 123_20; // _ serve para separar milhares, centenas, dezenas e decimais
 ```
 
-## BIG INT
+### BIG INT
 ```javascript
 var amount =        999999999999999; //Acima de 15 dígitos o javascript não calcula
 var bigInt = BigInt(999999999999999_999999999999999);
