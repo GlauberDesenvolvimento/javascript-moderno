@@ -6,8 +6,11 @@ let a = 1;
 let b = 2;
 let c = 0;
 ```
+
 ### DECLARAÇÃO DE VARIÁVEIS CONST (constants)
+```javascript
 const PI = 3.1411593;
+```
 
 ### ANONYMOUS FUNCTIONS (Block-Scoped Functions)
 ```javascript
