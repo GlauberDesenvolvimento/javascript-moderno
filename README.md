@@ -219,8 +219,8 @@ console.log(nfUSD.format(100200300.40)); //$100,200,300.40
 console.log(nfBRL.format(100200300.40)); //R$ 100.200.300,40
 ```
 
-*Hexadecimal — Base 16 — Prefixo `0x`*
-*Octal — Base 8 — Prefixo `0o`*
+*Hexadecimal — Base 16 — Prefixo `0x`*<br>
+*Octal — Base 8 — Prefixo `0o`*<br>
 *Binário — Base 2 — Prefixo `0b`*
 ```javascript
 const decimalLit = 15;
