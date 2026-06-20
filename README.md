@@ -9,7 +9,7 @@ let c = 0;
 ### DECLARAÇÃO DE VARIÁVEIS CONST (constants)
 const PI = 3.1411593;
 
-### ANONIMOUS FUNCTIONS (block scoped functions)
+### ANONYMOUS FUNCTIONS (Block-Scoped Functions)
 ```javascript
 {
 	0;
@@ -29,7 +29,7 @@ function f (x, y = 7, z = 42) {
 } // f(1) === 50
 ```
 
-### Manipulação de parâmetros extras (Rest operator)
+### MANIPULAÇÃO DE PARÂMETROS (Rest Operator)
 ```javascript
 function f (x, y, ...a) {
     return (x + y) * a.length
@@ -51,12 +51,12 @@ var valores = ["35 anos", "Mora em Brasília"];
 var mensagem = `${name} ${sobrenome}, ${valores.join(", ")}`; // 'Glauber Santos, 35 anos, Mora em Brasília'
 ```
 
-### MAP (Cria um novo array baseado em outro array)
+### MAP (Objeto Map)
 ```javascript
 [1, 2, 3].map(function(item, index){ return index+ ": " +item }) //['0: 1', '1: 2', '2: 3']
 ```
 
-### CONCATENANDO VARIÁVEIS DENTRO DE OBJETOS (Object Property Assignment)
+### OPERADORES LÓGICOS DE ATRIBUIÇÃO (Logical Assignment Operators)
 ```javascript
 var chave = "chaveObj";
 var valor = "valorObj";
@@ -89,7 +89,6 @@ console.log(foo, boo); // value1 value2
 ```
 
 ### MÓDULOS (Export/Import)
-
 ```javascript
 export function sum (x, y) { return x + y }
 export var pi = 3.141593
@@ -101,7 +100,7 @@ import { sum, pi } from "math";
 console.log(sum(1,2), pi);
 ```
 
-### SUBSTRING (String Searching)
+### BUSCA EM STRINGS (String Searching)
 ```javascript
 "hello boy".startsWith("hello"); // true
 "hello boy".endsWith("boy"); // true
@@ -222,7 +221,7 @@ Promise.allSettled(myPromiseArray).then( (results) => { console.log(results) });
 //(3) [{status: 'fulfilled', value: 100}, {status: 'rejected', reason: null}, {status: 'rejected', reason: Error: Ho No at <anonymous>:4:17}]
 ```
 
-### AYNC/AWAIT
+### ASYNC/AWAIT
 ```javascript
 var Api = {
 	get: function (url) {
@@ -289,7 +288,7 @@ const user = {
 }
 ```
 
-### OPERADOR CONDICIONAL DE POSIÇÃO DE OBJETO QUE NÃO EXISTE
+### ENCADEAMENTO OPCIONAL (Optional Chaining)
 ```javascript
 console.log(user.address?.street); 
 console.log(user.address.street || "O valor não existe");
@@ -299,8 +298,8 @@ console.log(user.address.street ?? "O valor não existe") //FALSEAVEIS -> 0 == f
 ### REPLACE ALL
 ```javascript
 const text = "Olá mundo esse é meu mundo";
-console.log(text.replace(/mundo/g, 'batata')); //FORMA ANTIGA
-console.log(text.replaceAll('mundo', 'batata'));//NOVO REPLACE ALL
+console.log(text.replace(/mundo/g, 'batata')); //FORMA TRADICIONAL
+console.log(text.replaceAll('mundo', 'batata'));//NOVO MÉTODO
 ```
 
 ### NUMERIC SEPARATOR
