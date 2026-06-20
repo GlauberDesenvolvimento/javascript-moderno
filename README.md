@@ -42,8 +42,19 @@ console.log(f(1, 3, 4, 5)); // [1, 3, 4, 5]
 
 ### Junção de arrays (Spread Operator)
 ```javascript
-var params = [ "hello", true, 7 ]
-var other = [ 1, 2, ...params ] // [ 1, 2, "hello", true, 7 ]
+const valores = [1, 2, 3];
+const copia = [...valores];
+console.log(copia); // [1, 2, 3]
+
+const outros = [4, 5];
+const todos = [...valores, ...outros];
+console.log(todos); // [1, 2, 3, 4, 5]
+```
+
+### Array from
+```javascript
+Array.from("Glauber");
+// ["G","l","a","u","b","e","r"]
 ```
 
 ### Interpolação de String (String Interpolation)
@@ -65,7 +76,27 @@ var keys = ['a', 'b', 'c'];
 
 ```
 
-### OPERADORES LÓGICOS DE ATRIBUIÇÃO (Logical Assignment Operators)
+### FUNÇÕES ÚTEIS DE ARRAYS
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// find() -> Retorna o primeiro elemento encontrado
+console.log(numbers.find(item => item > 3)); // 4
+
+// findIndex() -> Retorna o índice do primeiro elemento encontrado
+console.log(numbers.findIndex(item => item > 3)); // 3
+
+// some() -> Verifica se pelo menos um elemento atende à condição
+console.log(numbers.some(item => item > 4)); // true
+
+// every() -> Verifica se todos os elementos atendem à condição
+console.log(numbers.every(item => item > 0)); // true
+
+// filter() -> Retorna um novo array contendo apenas os elementos encontrados
+console.log(numbers.filter(item => item % 2 === 0)); // [2, 4]
+```
+### ATRIBUIÇÃO DINÂMICA DE PROPRIEDADES (Object Property Assignment)
 ```javascript
 var chave = "chaveObj";
 var valor = "valorObj";
@@ -76,20 +107,25 @@ console.log({ foo(a, b) {}, bar(x, y){} }); // { foo: ƒunction(a, b){}, bar: ƒ
 ```
 
 ### DESESTRUTURAÇÃO DE VARIÁVEIS (Destructuring Assignment)
+
 ```javascript
-var list = [ 1, 2, 3 ];
-var newList = [ a, , b ];
+var list = [1, 2, 3];
 
-console.log(newList);// [1, undefined, 3]
-console.log(newList[1])// undefined
+// Ignorando o segundo elemento
+var [a, , b] = list;
 
-var list = [ 1, 2, 3 ];
-var [ a, , b ] = list;
-console.log(a, b); // 1 3
+console.log(a); // 1
+console.log(b); // 3
 
-var obj = { foo: "value1", boo: "value2" };
+var obj = {
+    foo: "value1",
+    boo: "value2"
+};
+
 var { foo, boo } = obj;
-console.log(foo, boo); // value1 value2
+
+console.log(foo); // value1
+console.log(boo); // value2
 ```
 
 ### MÓDULOS (Export/Import)
@@ -119,8 +155,8 @@ class Pessoa {
 	name = "";
 	lastName = "";
 	_age = 0;
-	#privateVar = "";
-	#privateMethod(){}
+	#privateVar = "";//propriedades privadas (mas não são muito usadas)
+	#privateMethod(){}//métodos privados (também não são muito usados)
   	static #testePrivado = "teste";
 	static teste = "teste";
 	constructor(name, lastName){
@@ -197,7 +233,7 @@ console.log(octalLit);       // 15
 console.log(binaryLit);      // 15
 ```
 
-### OBJECT MAP
+### MAP (Coleção de Chave e Valor)
 ```javascript
 let m = new Map();
 m.set('Chave', 'Valor');
@@ -210,6 +246,28 @@ console.log(m.values()); // MapIterator {'Valor', 'Valor2'}
 console.log(m.get("Chave")); //Valor
 m.clear(); ; //Limpa o map
 console.log(m); // Map(0) {size: 0}
+```
+
+### SET (Coleção de Valores Únicos)
+```javascript
+let s = new Set();
+
+s.add("JavaScript");
+s.add("HTML");
+s.add("CSS");
+s.add("JavaScript"); // Ignorado (não permite valores duplicados)
+
+console.log(s); // Set(3) {'JavaScript', 'HTML', 'CSS'}
+
+console.log(s.size); // 3
+console.log(s.has("HTML")); // true
+console.log(s.has("Java")); // false
+
+s.delete("CSS");
+console.log(s); // Set(2) {'JavaScript', 'HTML'}
+
+s.clear(); // Limpa o Set
+console.log(s); // Set(0) {}
 ```
 
 ### PROMISSES (Combination)
@@ -303,5 +361,7 @@ console.log(num); //12320
 ```javascript
 var amount = 999999999999999; //Acima do limite seguro, o Number perde precisão
 var bigInt = BigInt(9999999999999999n); // Aceita inteiros arbitrariamente grandes
+//ou bigInt = 9999999999999999n;
+var 
 console.log(bigInt); // 9999999999999999n
 ```
